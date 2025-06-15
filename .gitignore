@@ -1,6 +1,50 @@
+# Node.js / Next.js
 node_modules/
 .next/
+out/
 dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+# Python / Django
 venv/
 __pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
 *.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.db
+*.DS_Store
+
+# VS Code
+.vscode/
+.history/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Django static/media (if generated)
+staticfiles/
+media/
+
+# Coverage reports
+coverage/
+htmlcov/
+*.cover
+*.coverage
+*.cov
+*.egg-info/
+.eggs/
+
+# Git
+.gitmodules
+
+# Misc
+*.swp
+*.swo
