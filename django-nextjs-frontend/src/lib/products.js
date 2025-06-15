@@ -1,0 +1,66 @@
+// src/lib/products.js
+export const products = [
+  {
+    id: 1,
+    name: 'Sunbeam Tote Jeff',
+    price: 25.00,
+    imageSrc: '/images/coffee_table.jpg',
+    imageAlt: 'Brown tote bag with floral embossing',
+  },
+  {
+    id: 2,
+    name: 'ShadowStride Shoes',
+    price: 20.00,
+    imageSrc: '/images/shadowstride-shoes.jpg',
+    imageAlt: 'Navy canvas sneakers',
+  },
+  {
+    id: 3,
+    name: 'Horizon Gaze Sunglasses',
+    price: 20.00,
+    imageSrc: '/images/horizon-gaze-sunglasses.jpg',
+    imageAlt: 'Black frame sunglasses with brown lenses',
+  },
+  {
+    id: 4,
+    name: 'Sunbeam Tote Jeff',
+    price: 25.00,
+    imageSrc: '/images/coffee_table.jpg',
+    imageAlt: 'Brown tote bag with floral embossing',
+  },
+  {
+    id: 5,
+    name: 'ShadowStride Shoes',
+    price: 20.00,
+    imageSrc: '/images/shadowstride-shoes.jpg',
+    imageAlt: 'Navy canvas sneakers',
+  },
+  {
+    id: 6,
+    name: 'Horizon Gaze Sunglasses',
+    price: 20.00,
+    imageSrc: '/images/horizon-gaze-sunglasses.jpg',
+    imageAlt: 'Black frame sunglasses with brown lenses',
+  },
+    {
+        id: 7,
+        name: 'Sunbeam Tote Jeff',
+        price: 25.00,
+        imageSrc: '/images/coffee_table.jpg',
+        imageAlt: 'Brown tote bag with floral embossing',
+    },
+    {
+        id: 8,
+        name: 'ShadowStride Shoes',
+        price: 20.00,
+        imageSrc: '/images/shadowstride-shoes.jpg',
+        imageAlt: 'Navy canvas sneakers',
+    },
+    {
+        id: 9,
+        name: 'ShadowStride Shoes',
+        price: 20.00,
+        imageSrc: '/images/shadowstride-shoes.jpg',
+        imageAlt: 'Navy canvas sneakers',
+    },
+];
