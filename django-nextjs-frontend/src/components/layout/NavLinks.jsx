@@ -30,7 +30,12 @@ const NavLinks = [
         label: "Settings",
         authRequired: false,
         href: "/settings"
-    }
+    },
+    {
+        label: "Cart",
+        authRequired: true,
+        href: "/cart"
+    },
 ]
 
 export const NonUserLinks = [
