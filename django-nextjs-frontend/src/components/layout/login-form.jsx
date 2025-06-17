@@ -4,6 +4,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '../../lib/utils';
+import { useAuth } from '../authProvider';
 import { Button } from '../ui/button';
 import { Card, CardContent } from '../ui/card';
 import { Input } from '../ui/input';
@@ -13,7 +14,9 @@ export function LoginForm({ className, ...props }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const router = useRouter();
+  const auth = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -25,12 +28,13 @@ export function LoginForm({ className, ...props }) {
       body: JSON.stringify({ email, password }),
     });
 
+    const body = await res.json().catch(() => ({}));
     if (!res.ok) {
-      const body = await res.json().catch(() => ({}));
       setError(body.message || 'Login failed. Please check your credentials.');
       return;
     }
-
+    auth.login(body.username);
+    setSuccess('Login successful!');
     router.push('/dashboard');
   }
 
@@ -48,7 +52,18 @@ export function LoginForm({ className, ...props }) {
           </button>
         </div>
       )}
-
+{/* Success popup */}
+      {success && (
+        <div className="fixed top-5 right-5 z-50 max-w-xs bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded shadow-lg flex justify-between items-center">
+          <span>{success}</span>
+          <button
+            onClick={() => setSuccess('')}
+            className="ml-4 font-bold hover:text-green-900"
+          >
+            ×
+          </button>
+        </div>
+      )}
       <Card className="overflow-hidden p-0">
         <CardContent className="grid p-0 md:grid-cols-2">
           {/* left: form */}
