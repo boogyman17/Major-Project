@@ -1,9 +1,12 @@
 {
-  "/api/users/route": "app/api/users/route.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/logout/route": "app/api/logout/route.js",
   "/api/login/route": "app/api/login/route.js",
+  "/api/users/route": "app/api/users/route.js",
   "/customers/page": "app/customers/page.js",
+  "/logout/page": "app/logout/page.js",
   "/login/page": "app/login/page.js",
   "/page": "app/page.js",
+  "/cart/page": "app/cart/page.js",
+  "/products/page": "app/products/page.js",
   "/dashboard/page": "app/dashboard/page.js"
 }
