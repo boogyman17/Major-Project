@@ -42,6 +42,7 @@ INSTALLED_APPS = [
      "corsheaders",
     # internal
     'waitlists.apps.WaitlistsConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [

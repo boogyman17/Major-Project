@@ -1,8 +1,8 @@
-// import { DJANGO_API_ENDPOINT } from '../../config/defaults'
-import { setRefreshToken, setToken } from '../../../lib/auth'
-import { NextResponse } from 'next/server'
+import { DJANGO_API_ENDPOINT } from '../../../config/defaults';
+import { setRefreshToken, setToken } from '../../../lib/auth';
+import { NextResponse } from 'next/server';
 
-const DJANGO_API_LOGIN_URL = "http://127.0.0.1:8000/api/login"
+const DJANGO_API_LOGIN_URL = `${DJANGO_API_ENDPOINT}/login`;
 export async function POST(request) {
     const requestData = await request.json()
     console.log('Login requestData:', requestData)

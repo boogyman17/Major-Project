@@ -27,6 +27,7 @@ export async function setToken(authToken){
         httpOnly: true, // limit client-side js
         sameSite: 'strict',
         secure: process.env.NODE_ENV !== 'development',
+        secure: process.env.NODE_ENV === 'production',
         maxAge: TOKEN_AGE,
     })
 }
@@ -40,6 +41,7 @@ export async function setRefreshToken(authRefreshToken){
         httpOnly: true, // limit client-side js
         sameSite: 'strict',
         secure: process.env.NODE_ENV !== 'development',
+        secure: process.env.NODE_ENV === 'production',
         maxAge: TOKEN_AGE,
     })
 }

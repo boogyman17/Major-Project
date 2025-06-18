@@ -5,8 +5,8 @@ import { Menu } from "lucide-react"
 
 import { Button } from "../ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
-import { useAuth } from "../authProvider"
-
+import { useAuth } from "../authProvider";
+import { ThemeToggleButton } from "../themeToggleButton";
 import NavLinks, {NonUserLinks} from './NavLinks'
 import BrandLink from "./BrandLink"
 
@@ -56,8 +56,9 @@ export default function MobileNavbar({className}) {
               >
                   {navLinkItem.label}
               </Link>
-          })}
+          })} 
       </>}
+        <ThemeToggleButton />
       </nav>
     </SheetContent>
   </Sheet>

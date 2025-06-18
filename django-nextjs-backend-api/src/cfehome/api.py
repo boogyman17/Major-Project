@@ -1,9 +1,14 @@
 from typing import List
 from ninja import NinjaAPI, Schema
+from datetime import timezone as dt_timezone
+from django.utils import timezone
+if not hasattr(timezone, "utc"):
+    timezone.utc = dt_timezone.utc
 from ninja_jwt.authentication import JWTAuth
 from ninja_extra import NinjaExtraAPI
 from ninja_jwt.controller import NinjaJWTDefaultController
 from waitlists.api import router as waitlists_router
+from orders.api import router as orders_router
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from ninja_jwt.tokens import RefreshToken
@@ -18,6 +23,7 @@ class RegisterSchema(Schema):
 api = NinjaExtraAPI()
 api.register_controllers(NinjaJWTDefaultController)
 api.add_router("/", waitlists_router)
+api.add_router("/", orders_router)
 from ninja import Router
 
 router = Router()
@@ -71,7 +77,6 @@ def login(request, payload: LoginSchema):
     return {
         "username": user.username,
         "access": str(refresh.access_token),
-        "refresh": str(refresh),
     }
 @api.get("/hello")
 def hello(request):
@@ -82,8 +87,8 @@ def hello(request):
 @api.get("/me",response=UserSchema,auth=JWTAuth())
 def me(request):
     return request.user
-    
-@api.get("/users", response=List[UserListSchema], auth=JWTAuth())
+
+@api.get("/users/", response=List[UserListSchema], auth=JWTAuth())
 def list_users(request):
     if not request.user.is_staff:
         return api.create_response(request, {"detail": "Permission denied"}, status=403)

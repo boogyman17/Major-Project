@@ -4,9 +4,23 @@
 import { useCart } from '../../context/CartContext';
 import CartItem from '../../components/CartItem';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function CartPage() {
   const { cartItems, total, clearCart } = useCart();
+  const router = useRouter();
+
+  async function submitOrder() {
+    const res = await fetch('/api/orders', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: cartItems, total }),
+    });
+    if (res.ok) {
+      clearCart();
+      router.push('/orders');
+    }
+  }
 
   return (
     <main className="p-8">
@@ -30,12 +44,20 @@ export default function CartPage() {
             <span className="text-xl font-semibold">
               Total: ${total.toFixed(2)}
             </span>
-            <button
-              onClick={clearCart}
-              className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
-            >
-              Clear Cart
-            </button>
+            <div className="space-x-2">
+              <button
+                onClick={clearCart}
+                className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition"
+              >
+                Clear Cart
+              </button>
+              <button
+                onClick={submitOrder}
+                className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
+              >
+                Submit Order
+              </button>
+            </div>
           </div>
         </>
       )}

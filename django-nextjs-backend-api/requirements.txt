@@ -1,7 +1,7 @@
 Django
 django-cors-headers
-django-ninja==0.17.0
-django-ninja-jwt[crypto]
+django-ninja==1.4.3
+django-ninja-jwt[crypto]==5.3.7
 dj-database-url
 psycopg[binary] # psycopg
 pydantic[email]

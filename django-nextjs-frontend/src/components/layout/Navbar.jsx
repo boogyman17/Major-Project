@@ -11,7 +11,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from '../../context/CartContext';
 import { ShoppingCart } from 'lucide-react';
-
+import { ThemeToggleButton } from '../themeToggleButton';
 export default function Navbar({ className }) {
   const auth = useAuth();
   const { cartItems } = useCart();
@@ -84,9 +84,10 @@ export default function Navbar({ className }) {
 
             {/* Account menu */}
             <AccountDropdown />
+            <ThemeToggleButton />
           </div>
         ) : (
-          <div className="space-x-2">
+          <div className="flex items-center space-x-2">
             {NonUserLinks.map((navLinkItem, idx) => {
               const shouldHide = !auth.isAuthenticated && navLinkItem.authRequired;
               return shouldHide ? null : (
@@ -99,6 +100,7 @@ export default function Navbar({ className }) {
                 </Link>
               );
             })}
+            <ThemeToggleButton />
           </div>
         )}
       </div>

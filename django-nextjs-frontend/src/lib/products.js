@@ -2,8 +2,8 @@
 export const products = [
   {
     id: 1,
-    name: 'Sunbeam Tote Jeff',
-    price: 25.00,
+    name: 'Grey Pot',
+    price: 5.00,
     imageSrc: '/img/coffee_table.jpg',
     imageAlt: 'Brown tote bag with floral embossing',
     featured: true,
@@ -11,7 +11,7 @@ export const products = [
   },
   {
     id: 2,
-    name: 'ShadowStride Shoes',
+    name: 'Glass Table',
     price: 20.00,
     salePrice: 15.00,
     imageSrc: '/img/glass_table.jpg',
@@ -21,7 +21,7 @@ export const products = [
   },
   {
     id: 3,
-    name: 'Horizon Gaze Sunglasses',
+    name: 'Wooden Table With Glass Top',
     price: 20.00,
     imageSrc: '/img/wooden_table.jpg',
     imageAlt: 'Black frame sunglasses with brown lenses',
@@ -30,7 +30,7 @@ export const products = [
   },
   {
     id: 4,
-    name: 'Sunbeam Tote Jeff',
+    name: 'Yellow Wool Chair',
     price: 25.00,
     imageSrc: '/img/yelllow_chair.jpg',
     imageAlt: 'Brown tote bag with floral embossing',
@@ -39,7 +39,7 @@ export const products = [
   },
   {
     id: 5,
-    name: 'ShadowStride Shoes',
+    name: 'Green Couch',
     price: 20.00,
     salePrice: 18.00,
     imageSrc: '/img/green_couch.jpg',
@@ -49,7 +49,7 @@ export const products = [
   },
   {
     id: 6,
-    name: 'Horizon Gaze Sunglasses',
+    name: 'Orange Lamp',
     price: 20.00,
     imageSrc: '/img/test.jpg',
     imageAlt: 'Black frame sunglasses with brown lenses',
@@ -58,7 +58,7 @@ export const products = [
   },
   {
     id: 7,
-    name: 'Sunbeam Tote Jeff',
+    name: 'Fossil Watch',
     price: 25.00,
     imageSrc: '/img/watch.jpg',
     imageAlt: 'Brown tote bag with floral embossing',
@@ -67,7 +67,7 @@ export const products = [
   },
   {
     id: 8,
-    name: 'ShadowStride Shoes',
+    name: 'Smart Watch',
     price: 20.00,
     salePrice: 16.00,
     imageSrc: '/img/smart_watch.jpg',
@@ -77,7 +77,7 @@ export const products = [
   },
   {
     id: 9,
-    name: 'ShadowStride Shoes',
+    name: 'Vinta Bag',
     price: 20.00,
     imageSrc: '/img/bag.jpg',
     imageAlt: 'Navy canvas sneakers',
