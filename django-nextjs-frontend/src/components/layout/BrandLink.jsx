@@ -6,7 +6,7 @@ import { Package2 } from "lucide-react"
 export default function BrandLink({displayName, className}){
     const finalClass = className ? className : "flex items-center gap-2 text-lg font-semibold md:text-base"
     return <Link
-        href="/"
+        href="/dashboard"
         className={finalClass}
     >
         <Package2 className="h-6 w-6" />

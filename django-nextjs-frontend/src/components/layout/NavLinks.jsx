@@ -8,8 +8,8 @@ const NavLinks = [
     },
     {
         label: "Waitlist",
-        authRequired: true,
-        href: "/waitlists"
+        authRequired: false,
+        href: "/"
     },
     {
         label: "Orders",
@@ -20,11 +20,6 @@ const NavLinks = [
         label: "Products",
         authRequired: false,
         href: "/products"
-    },
-    {
-        label: "Customers",
-        authRequired: false,
-        href: "/customers"
     },
     {
         label: "Settings",
