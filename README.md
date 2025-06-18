@@ -39,9 +39,11 @@
 
 The development server includes a default admin user:
 ```
+ADMIN LOG INL:
 Username: jason.budiman07@gmail.com
 Password: Jasonbudiman12321!
-Username: admin
-Password: admin
+
+You can create a customer Login using SignIn
+
 ``
 
