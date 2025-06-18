@@ -4,7 +4,7 @@ from django.utils import timezone
 from .models import WaitlistEntry
 
 class WaitlistEntryCreateForm(forms.ModelForm):
-    # email = forms.EmailField()
+    
     class Meta:
         model = WaitlistEntry
         fields = ['email']
@@ -18,7 +18,6 @@ class WaitlistEntryCreateForm(forms.ModelForm):
         )
         if qs.count() >= 5:
             raise forms.ValidationError("Cannot enter this email again today.")
-        # if email.endswith('@gmail.com'):
-        #     raise forms.ValidationError('Cannot use gmail')
+        
         return email
     

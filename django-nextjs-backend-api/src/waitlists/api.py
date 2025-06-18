@@ -21,6 +21,6 @@ router = Router()
 
 
 @router.get("/waitlists", response=List[WaitlistEntryListSchema])
-def list_waitlist_entries(request):  # fixed typo in  name
+def list_waitlist_entries(request):  
     qs = WaitlistEntry.objects.all()
     return qs

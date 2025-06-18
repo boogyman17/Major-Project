@@ -5,20 +5,15 @@ from pydantic import EmailStr
 
 
 class WaitlistEntryCreateSchema(Schema):
-    # Create -> Data
-    # WaitlistEntryIn
+    
     email: EmailStr
 
 class ErrorWaitlistEntryCreateSchema(Schema):
-    # Create -> Data
-    # WaitlistEntryIn
     email: List[Any]
-    # non_field_errors: List[dict] = []
+    
 
 
 class WaitlistEntryListSchema(Schema):
-    # List -> Data
-    # WaitlistEntryOut
     id: int
     email: EmailStr
     updated: datetime
@@ -27,8 +22,7 @@ class WaitlistEntryListSchema(Schema):
 
 
 class WaitlistEntryDetailSchema(Schema):
-    # Get -> Data
-    # WaitlistEntryOut
+    
     id: int
     email: EmailStr
     updated: datetime
@@ -37,8 +31,6 @@ class WaitlistEntryDetailSchema(Schema):
 
 
 class WaitlistEntryUpdateSchema(Schema):
-    # Put -> Data
-    # WaitlistEntryOut
-    # id: int
-    description: str = ""
+    
+   description: str = ""
     
