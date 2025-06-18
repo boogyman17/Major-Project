@@ -2,15 +2,15 @@
 import { setRefreshToken, setToken } from '../../../lib/auth'
 import { NextResponse } from 'next/server'
 
-const DJANGO_API_LOGIN_URL = "http://127.0.0.1:8000/api/token/pair"
-
+const DJANGO_API_LOGIN_URL = "http://127.0.0.1:8000/api/login"
 export async function POST(request) {
     const requestData = await request.json()
     console.log('Login requestData:', requestData)
     const { email, username, password } = requestData
     const loginPayload = {
-        username: username || email,
-        password: password,
+        username,
+        email,
+        password,
     }
     const jsonData = JSON.stringify(loginPayload)
     const requestOptions = {

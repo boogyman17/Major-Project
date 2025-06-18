@@ -34,7 +34,7 @@ export function LoginForm({ className, ...props }) {
       return;
     }
     auth.login(body.username);
-    setSuccess('Login successful!');
+    setSuccess('Login successful! Redirecting to dashboard...');
     router.push('/dashboard');
   }
 

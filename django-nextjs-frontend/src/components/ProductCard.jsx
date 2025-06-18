@@ -3,12 +3,26 @@
 
 import Image from 'next/image';
 import { useCart } from '../context/CartContext';
+import { useState } from 'react';
 
 export default function ProductCard({ product }) {
   const { addToCart } = useCart();
+  const [success, setSuccess] = useState('');
 
+  function handleAdd() {
+    addToCart(product);
+    setSuccess('Item added to cart!');
+  }
   return (
     <div className="group relative bg-white rounded-lg shadow hover:shadow-lg transition p-4 flex flex-col items-center">
+        {success && (
+          <div className="fixed top-5 right-5 z-50 max-w-xs bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded shadow-lg flex justify-between items-center">
+            <span>{success}</span>
+            <button onClick={() => setSuccess('')} className="ml-4 font-bold hover:text-green-900">
+              ×
+            </button>
+          </div>
+        )}
       {product.onSale && (
         <span className="absolute top-3 right-3 z-20 bg-red-500 text-white text-xs px-2 py-1 rounded">
           SALE
@@ -42,11 +56,12 @@ export default function ProductCard({ product }) {
         )}
       </div>
       <button
-        onClick={() => addToCart(product)}
-        className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-      >
+          onClick={handleAdd}
+          className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+        >
         +
       </button>
+
     </div>
   );
 }

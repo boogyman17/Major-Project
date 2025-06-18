@@ -1,3 +1,4 @@
+from typing import List
 from ninja import NinjaAPI, Schema
 from ninja_jwt.authentication import JWTAuth
 from ninja_extra import NinjaExtraAPI
@@ -28,11 +29,16 @@ def list_entries(request):
 class UserSchema(Schema):
     username: str
     is_authenticated: bool
-    
     email: str = None
 
 
+
+class UserListSchema(Schema):
+    id: int
+    username: str
+    email: str
 @api.post("/register")
+
 def register(request, payload: RegisterSchema):
     user = User.objects.create_user(
         username=payload.username,
@@ -76,3 +82,9 @@ def hello(request):
 @api.get("/me",response=UserSchema,auth=JWTAuth())
 def me(request):
     return request.user
+    
+@api.get("/users", response=List[UserListSchema], auth=JWTAuth())
+def list_users(request):
+    if not request.user.is_staff:
+        return api.create_response(request, {"detail": "Permission denied"}, status=403)
+    return User.objects.all()
