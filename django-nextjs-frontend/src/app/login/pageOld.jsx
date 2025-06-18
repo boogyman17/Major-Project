@@ -19,7 +19,6 @@ export default function Page() {
             body: jsonData
         }
         const response = await fetch(LOGIN_URL, requestOptions)
-        // const data = await response.json()
         if (response.ok) {
             console.log("logged in")
             auth.login()

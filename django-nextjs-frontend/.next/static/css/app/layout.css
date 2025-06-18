@@ -954,6 +954,9 @@ video {
   .w-\[350px\] {
   width: 350px;
 }
+  .w-\[80px\] {
+  width: 80px;
+}
   .w-full {
   width: 100%;
 }

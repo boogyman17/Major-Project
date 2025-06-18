@@ -1,4 +1,4 @@
-// src/app/layout.jsx
+
 import { Inter } from "next/font/google";
 import { Inter as FontSans } from "next/font/google";
 import { Suspense } from "react";

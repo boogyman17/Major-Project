@@ -1,4 +1,3 @@
-// src/context/CartContext.jsx
 'use client';
 
 import { createContext, useContext, useState, useEffect } from 'react';
@@ -8,13 +7,12 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
-  // load from localStorage
+  
   useEffect(() => {
     const stored = localStorage.getItem('cart');
     if (stored) setCartItems(JSON.parse(stored));
   }, []);
 
-  // persist to localStorage
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems]);

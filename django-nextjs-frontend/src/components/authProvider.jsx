@@ -56,7 +56,6 @@ export function AuthProvider({children}) {
         router.replace(LOGOUT_REDIRECT_URL)
     }
     const loginRequiredRedirect = () => {
-        // user is not logged in via API
         setIsAuthenticated(false)
         localStorage.setItem(LOCAL_STORAGE_KEY, "0")
         let loginWithNextUrl = `${LOGIN_REQUIRED_URL}?next=${pathname}`

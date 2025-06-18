@@ -1,4 +1,3 @@
-// src/components/layout/LoginForm.jsx
 'use client';
 
 import { useState } from 'react';
@@ -40,7 +39,7 @@ export function LoginForm({ className, ...props }) {
 
   return (
     <div className={cn('relative flex flex-col gap-6', className)} {...props}>
-      {/* Error popup */}
+      
       {error && (
         <div className="fixed top-5 right-5 z-50 max-w-xs bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded shadow-lg flex justify-between items-center">
           <span>{error}</span>
@@ -52,7 +51,7 @@ export function LoginForm({ className, ...props }) {
           </button>
         </div>
       )}
-{/* Success popup */}
+
       {success && (
         <div className="fixed top-5 right-5 z-50 max-w-xs bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded shadow-lg flex justify-between items-center">
           <span>{success}</span>
@@ -66,7 +65,7 @@ export function LoginForm({ className, ...props }) {
       )}
       <Card className="overflow-hidden p-0">
         <CardContent className="grid p-0 md:grid-cols-2">
-          {/* left: form */}
+          
           <form onSubmit={handleSubmit} className="p-6 md:p-8 space-y-6">
             <div className="flex flex-col items-center text-center gap-2">
               <h1 className="text-2xl font-bold">Welcome back!</h1>
@@ -119,7 +118,7 @@ export function LoginForm({ className, ...props }) {
             </div>
 
             <div className="grid grid-cols-3 gap-4">
-              {/* Apple */}
+              
               <Button variant="outline" type="button" className="w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path
@@ -130,7 +129,7 @@ export function LoginForm({ className, ...props }) {
                 <span className="sr-only">Login with Apple</span>
               </Button>
 
-              {/* Google */}
+              
               <Button variant="outline" type="button" className="w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path
@@ -141,7 +140,7 @@ export function LoginForm({ className, ...props }) {
                 <span className="sr-only">Login with Google</span>
               </Button>
 
-              {/* Meta */}
+             
               <Button variant="outline" type="button" className="w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                   <path
@@ -162,7 +161,7 @@ export function LoginForm({ className, ...props }) {
             </div>
           </form>
 
-          {/* right: image */}
+          
           <div className="bg-muted relative hidden md:block">
             <img
               src="cathal-mac-an-bheatha-cvRKmOp_fl4-unsplash.jpg"

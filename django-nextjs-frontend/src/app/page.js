@@ -16,14 +16,10 @@ export default function Home() {
   async function getDjangoAPIData() {
     const response = await fetch("http://127.0.0.1:8000/api/hello");
     const data = await response.json();
-    //console.log(data);
     setDataStr(JSON.stringify(data))
     const auth = useAuth()
-    //const {data, error, isLoading} = useSWR("/api/hello", fetcher)
   }
-  // if (error) return <div>failed to load</div>
-  // if (isLoading) return <div>loading...</div>
- 
+  
   async function handleClick() {
     await getDjangoAPIData()
   }
@@ -49,4 +45,3 @@ export default function Home() {
     </main>
   );
 }
-//line 36 = {data && data.apiEndpoint}

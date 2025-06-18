@@ -15,8 +15,7 @@ export default function Carousel({ slides }) {
           <div
             className="embla__slide flex-shrink-0 w-full"
             key={idx}
-            style={{ minWidth: "100%", height: "700px" }} // Ensures each slide takes full width and desired height
-          >
+            style={{ minWidth: "100%", height: "700px" }} >
             {React.cloneElement(slide, {
               className:
                 (slide.props.className || "") +

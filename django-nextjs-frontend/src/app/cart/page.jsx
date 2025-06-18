@@ -1,4 +1,3 @@
-// src/app/cart/page.jsx
 'use client';
 
 import { useCart } from '../../context/CartContext';
