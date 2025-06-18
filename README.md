@@ -40,7 +40,7 @@
 The development server includes a default admin user:
 ```
 ADMIN LOG INL:
-username: admin
+username: admin@gmail.com
 password: applecat!
 Username: jason.budiman07@gmail.com
 Password: Jasonbudiman12321!
