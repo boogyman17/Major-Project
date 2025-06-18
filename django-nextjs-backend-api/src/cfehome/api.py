@@ -4,6 +4,8 @@ from ninja_extra import NinjaExtraAPI
 from ninja_jwt.controller import NinjaJWTDefaultController
 from waitlists.api import router as waitlists_router
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
+from ninja_jwt.tokens import RefreshToken
 
 
 class RegisterSchema(Schema):
@@ -39,6 +41,32 @@ def register(request, payload: RegisterSchema):
     )
     return {"id": user.id, "username": user.username}
 
+class LoginSchema(Schema):
+    username: str | None = None
+    email: str | None = None
+    password: str
+
+
+@api.post("/login")
+def login(request, payload: LoginSchema):
+    ident = payload.username or payload.email
+    if not ident:
+        return api.create_response(request, {"detail": "Username or email required"}, status=400)
+    if payload.username is None:
+        try:
+            user_obj = User.objects.get(email=payload.email)
+            ident = user_obj.username
+        except User.DoesNotExist:
+            return api.create_response(request, {"detail": "Invalid credentials"}, status=401)
+    user = authenticate(username=ident, password=payload.password)
+    if not user:
+        return api.create_response(request, {"detail": "Invalid credentials"}, status=401)
+    refresh = RefreshToken.for_user(user)
+    return {
+        "username": user.username,
+        "access": str(refresh.access_token),
+        "refresh": str(refresh),
+    }
 @api.get("/hello")
 def hello(request):
     print (request)
