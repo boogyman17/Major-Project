@@ -39,9 +39,14 @@
 
 The development server includes a default admin user:
 ```
+ADMIN LOG INL:
+username: admin@gmail.com
+password: applecat!
 Username: jason.budiman07@gmail.com
 Password: Jasonbudiman12321!
-Username: admin
-Password: admin
-``
 
+You can create a customer Login using SignIn
+
+``
+- View all customer orders at `http://localhost:3000/admin/orders`
+- Admin dashboard with customer count and orders table at `http://localhost:3000/admin`
