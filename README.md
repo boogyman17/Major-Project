@@ -48,4 +48,5 @@ Password: Jasonbudiman12321!
 You can create a customer Login using SignIn
 
 ``
-
+- View all customer orders at `http://localhost:3000/admin/orders`
+- Admin dashboard with customer count and orders table at `http://localhost:3000/admin`
