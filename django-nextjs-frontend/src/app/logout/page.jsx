@@ -1,6 +1,6 @@
 "use client"
 
-import { useAuth } from "../components/authProvider"
+import { useAuth } from "../../components/authProvider"
 const LOGOUT_URL = "/api/logout/"
 
 

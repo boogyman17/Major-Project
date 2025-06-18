@@ -1,6 +1,6 @@
 "use client"
 
-import { useAuth } from "../components/authProvider"
+import { useAuth } from "../../components/authProvider"
 import {
     Table,
     TableBody,
@@ -10,8 +10,8 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-  } from "../components/ui/table"
-import fetcher from "@/lib/fetcher"
+  } from "../../components/ui/table"
+import fetcher from "../../lib/fetcher"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import useSWR from "swr"

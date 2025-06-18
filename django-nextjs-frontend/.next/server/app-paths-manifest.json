@@ -1,6 +1,10 @@
 {
+  "/api/register/route": "app/api/register/route.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/login/route": "app/api/login/route.js",
+  "/cart/page": "app/cart/page.js",
+  "/logout/page": "app/logout/page.js",
   "/login/page": "app/login/page.js",
-  "/page": "app/page.js",
-  "/dashboard/page": "app/dashboard/page.js"
+  "/signup/page": "app/signup/page.js",
+  "/waitlists/page": "app/waitlists/page.js"
 }
